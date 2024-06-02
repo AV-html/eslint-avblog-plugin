@@ -28,6 +28,11 @@ ruleTester.run("layer-imports", rule, {
       errors: [],
     },
     {
+      filename: './/src/core/types.ts',
+      code: "import { rootReducer } from 'app/store-types'",
+      errors: [],
+    },
+    {
       filename: './/src/modules/profile',
       code: "import { IconProps } from 'ui/icon/icon-types'",
       errors: [],
@@ -37,7 +42,7 @@ ruleTester.run("layer-imports", rule, {
   invalid: [
     {
       filename: './/src/ui/input',
-      code: "import { IconProps } from 'modules/profile/profile-types'",
+      code: "import { IconProps } from 'modules/profile/profile-selectors'",
       errors: [{ message: 'разрешено импортировать только из нижестоящих слоёв' }],
     },
     {

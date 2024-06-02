@@ -37,20 +37,24 @@ ruleTester.run("public-api-imports", rule, {
       code: "import { SkeletonListNotifications } from '../../profile-notifications/skeleton-list-notifications'",
       errors: [],
     },
+    {
+      code: "import { IAgataState } from 'modules/agata/agata-types'",
+      errors: [],
+    },
   ],
 
   invalid: [
     {
       code: "import { getUserName } from 'components/registration/registration-component'",
-      errors: [{ message: "абсолютный импорт разрешён только из public-api (index.ts)" }],
+      errors: [{ message: "абсолютный импорт компонент разрешён только из public-api (index.ts)" }],
     },
     {
       code: "import { ContainerComponent } from 'ui/container/container-component'",
-      errors: [{ message: "абсолютный импорт разрешён только из public-api (index.ts)" }],
+      errors: [{ message: "абсолютный импорт компонент разрешён только из public-api (index.ts)" }],
     },
     {
       code: "import { getUserName } from '@/components/registration/registration-component'",
-      errors: [{ message: "абсолютный импорт разрешён только из public-api (index.ts)" }],
+      errors: [{ message: "абсолютный импорт компонент разрешён только из public-api (index.ts)" }],
       options: [{ alias: '@' }]
     },
   ],
