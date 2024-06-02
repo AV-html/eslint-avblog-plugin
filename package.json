@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-avblog-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "plugin for production project",
   "keywords": [
     "eslint",
